@@ -1,6 +1,10 @@
 /*! Modern Combined Reset: minireset + normalize + new-css-reset features */
 /*! Enhanced with Responsiveness & Accessibility */
 
+meta[name="viewport"] {
+    content: "width=device-width, initial-scale=1";
+}
+
 /* Remove default margin on everything */
 *,
 *::before,
