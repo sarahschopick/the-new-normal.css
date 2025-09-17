@@ -13,35 +13,31 @@
   box-sizing: inherit;
 }
 
-/* 2) Root defaults (do not add smooth scroll, padding, or fonts here) */
+/* 2) Root defaults */
 html {
   box-sizing: border-box;
-  line-height: 1.15;               /* normalize */
-  -webkit-text-size-adjust: 100%;  /* iOS zoom */
+  line-height: 1.15;
+  -webkit-text-size-adjust: 100%;
   -moz-text-size-adjust: 100%;
   -moz-tab-size: 4;
   tab-size: 4;
   -webkit-tap-highlight-color: transparent;
 }
 
-/* 3) Body defaults (no opinionated font-family/size) */
+/* 3) Body defaults */
 body {
   margin: 0;
   line-height: 1.5;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-rendering: optimizeSpeed;
-
-  /* Viewport height: modern + fallback */
-  min-height: 100vh;   /* fallback */
-  min-height: 100dvh;  /* modern */
-
-  /* Safe wrapping */
+  min-height: 100vh;
+  min-height: 100dvh;
   word-wrap: break-word;
   overflow-wrap: break-word;
 }
 
-/* 4) Lists: remove default markers (minireset-style) */
+/* 4) Lists: remove default markers */
 ol,
 ul,
 menu {
@@ -79,12 +75,20 @@ abbr[title] {
   text-decoration: underline dotted;
   cursor: help;
 }
-:where(b, strong) { font-weight: bolder; }
+
+:where(b, strong) {
+  font-weight: bolder;
+}
+
 :where(code, kbd, samp, pre) {
   font-family: ui-monospace, SFMono-Regular, Consolas, 'Liberation Mono', Menlo, monospace;
   font-size: 1em;
 }
-small { font-size: 80%; }
+
+small {
+  font-size: 80%;
+}
+
 sub,
 sup {
   font-size: 75%;
@@ -92,10 +96,16 @@ sup {
   position: relative;
   vertical-align: baseline;
 }
-sub { bottom: -0.25em; }
-sup { top: -0.5em; }
 
-/* 10) Media: basic responsive behavior without layout opinions */
+sub {
+  bottom: -0.25em;
+}
+
+sup {
+  top: -0.5em;
+}
+
+/* 10) Media: basic responsive behavior */
 :where(img, svg, video, canvas, audio, iframe, embed, object) {
   max-width: 100%;
   height: auto;
@@ -106,10 +116,11 @@ sup { top: -0.5em; }
   vertical-align: middle;
 }
 
-/* Missing alt text indicator (accessibility normalization) */
+/* Missing alt text indicator */
 img:not([alt]) {
   outline: 2px solid red;
 }
+
 img[alt=""] {
   outline: none;
 }
@@ -131,6 +142,10 @@ img[alt=""] {
 /* Form input normalization */
 :where(input, textarea) {
   margin: 0;
+  -webkit-user-select: auto;
+  -moz-user-select: auto;
+  -ms-user-select: auto;
+  user-select: auto;
 }
 
 /* Button normalization */
@@ -140,13 +155,10 @@ img[alt=""] {
   border: none;
 }
 
-/* Safari text input selection quirk */
-:where(input, textarea) {
-  -webkit-user-select: auto;
-}
-
 /* Remove UA-specific quirks */
-:where(input:invalid, textarea:invalid, select:invalid) { box-shadow: none; }
+:where(input:invalid, textarea:invalid, select:invalid) {
+  box-shadow: none;
+}
 
 /* Button styling normalization */
 button,
@@ -154,27 +166,31 @@ button,
 [type="reset"],
 [type="submit"] {
   -webkit-appearance: button;
+  appearance: button;
   background-image: none;
 }
 
 /* Number input spinners */
-:where([type="number"]::-webkit-inner-spin-button,
-       [type="number"]::-webkit-outer-spin-button) {
+:where([type="number"]::-webkit-inner-spin-button, [type="number"]::-webkit-outer-spin-button) {
   height: auto;
 }
 
 /* Search inputs */
 :where([type="search"]) {
   -webkit-appearance: textfield;
+  appearance: textfield;
   outline-offset: -2px;
 }
+
 :where([type="search"]::-webkit-search-decoration) {
   -webkit-appearance: none;
+  appearance: none;
 }
 
 /* File upload button */
 :where(::-webkit-file-upload-button) {
   -webkit-appearance: button;
+  appearance: button;
   font: inherit;
 }
 
@@ -191,6 +207,7 @@ button,
   border: 1px solid currentColor;
   min-width: 0;
 }
+
 :where(legend) {
   color: inherit;
   display: table;
@@ -225,11 +242,18 @@ table {
 }
 
 /* 19) Details/summary defaults */
-:where(details) { display: block; }
-:where(summary) { display: list-item; }
+:where(details) {
+  display: block;
+}
+
+:where(summary) {
+  display: list-item;
+}
 
 /* 20) Hidden elements */
-:where(template, [hidden]) { display: none; }
+:where(template, [hidden]) {
+  display: none;
+}
 
 /* 21) Interactive state normalization */
 :where([disabled]) {
@@ -243,7 +267,9 @@ table {
 }
 
 /* 23) Root stacking context for SPA containers */
-:where(#root, #__next) { isolation: isolate; }
+:where(#root, #__next) {
+  isolation: isolate;
+}
 
 /* 24) Tap highlight removal for better mobile experience */
 :where(a, area, button, input, label, select, summary, textarea, [tabindex]) {
@@ -251,7 +277,7 @@ table {
   touch-action: manipulation;
 }
 
-/* 25) Reduced motion normalization (accessibility) */
+/* 25) Reduced motion normalization */
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;
@@ -283,7 +309,9 @@ table {
   }
 
   a,
-  a:visited { text-decoration: underline; }
+  a:visited {
+    text-decoration: underline;
+  }
 
   abbr[title]::after {
     content: " (" attr(title) ")";
@@ -295,9 +323,19 @@ table {
     page-break-inside: avoid;
   }
 
-  img { page-break-inside: avoid; }
+  img {
+    page-break-inside: avoid;
+  }
 
-  p, h2, h3 { orphans: 3; widows: 3; }
+  p,
+  h2,
+  h3 {
+    orphans: 3;
+    widows: 3;
+  }
 
-  h2, h3 { page-break-after: avoid; }
+  h2,
+  h3 {
+    page-break-after: avoid;
+  }
 }
