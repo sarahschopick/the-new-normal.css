@@ -42,16 +42,16 @@ table{border-collapse:collapse;border-spacing:0}
 :where(#root,#__next){isolation:isolate}
 :where(a,area,button,input,label,select,summary,textarea,[tabindex]){-webkit-tap-highlight-color:transparent;touch-action:manipulation}
 @media (prefers-reduced-motion:reduce){
-html{scroll-behavior:auto}
-html:focus-within{scroll-behavior:auto}
-*,*::after,*::before{animation-duration:0.01ms!important;animation-iteration-count:1!important;transition-duration:0.01ms!important;scroll-behavior:auto!important}
+  html{scroll-behavior:auto}
+  html:focus-within{scroll-behavior:auto}
+  *,*::after,*::before{animation-duration:0.01ms!important;animation-iteration-count:1!important;transition-duration:0.01ms!important;scroll-behavior:auto!important}
 }
 @media print{
-*,*::after,*::before{background:transparent!important;color:black!important;box-shadow:none!important;text-shadow:none!important}
-a,a:visited{text-decoration:underline}
-abbr[title]::after{content:" (" attr(title) ")"}
-blockquote,pre{border:1px solid #999;page-break-inside:avoid}
-img{page-break-inside:avoid}
-h2,h3,p{orphans:3;widows:3}
-h2,h3{page-break-after:avoid}
+  *,*::after,*::before{background:transparent!important;color:black!important;box-shadow:none!important;text-shadow:none!important}
+  a,a:visited{text-decoration:underline}
+  abbr[title]::after{content:" (" attr(title) ")"}
+  blockquote,pre{border:1px solid #999;page-break-inside:avoid}
+  img{page-break-inside:avoid}
+  h2,h3,p{orphans:3;widows:3}
+  h2,h3{page-break-after:avoid}
 }
