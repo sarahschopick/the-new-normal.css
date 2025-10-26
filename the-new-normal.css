@@ -6,7 +6,7 @@
 
 /* 1) Universal reset: margins/padding + box-sizing inherit */
 :root {
-   box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 *,
@@ -19,19 +19,16 @@
 
 /* 2) Root defaults */
 html {
-  box-sizing: border-box;
   line-height: 1.15;
   -webkit-text-size-adjust: 100%;
   -moz-text-size-adjust: 100%;
   -moz-tab-size: 4;
   tab-size: 4;
-  -webkit-tap-highlight-color: transparent;
 }
 
 /* 3) Body defaults */
 body {
-  margin: 0;
-  line-height: 1.5;
+  line-height: 1.15;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-rendering: optimizeSpeed;
@@ -85,7 +82,8 @@ abbr[title] {
 }
 
 :where(code, kbd, samp, pre) {
-  font-family: ui-monospace, SFMono-Regular, Consolas, 'Liberation Mono', Menlo, monospace;
+  font-family: ui-monospace, SFMono-Regular, Consolas, "Liberation Mono", Menlo,
+    monospace;
   font-size: 1em;
 }
 
@@ -278,15 +276,11 @@ table {
 /* 24) Tap highlight removal for better mobile experience */
 :where(a, area, button, input, label, select, summary, textarea, [tabindex]) {
   -webkit-tap-highlight-color: transparent;
-  touch-action: manipulation;
 }
 
 /* 25) Reduced motion normalization */
 @media (prefers-reduced-motion: reduce) {
-  html {
-    scroll-behavior: auto;
-  }
-  
+  html,
   html:focus-within {
     scroll-behavior: auto;
   }
@@ -329,6 +323,19 @@ table {
 
   img {
     page-break-inside: avoid;
+  }
+
+  p,
+  pre,
+  blockquote,
+  q,
+  code,
+  figcaption {
+    line-height: 2; /* Double-spacing for annotations and improved print accessibility */
+  }
+
+  p {
+    font-size: 1rem; /* Ensure minimum readable size for print */
   }
 
   p,
