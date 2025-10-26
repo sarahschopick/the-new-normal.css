@@ -1,14 +1,15 @@
-*,*::after,*::before{margin:0;padding:0;box-sizing:inherit}
-html{box-sizing:border-box;line-height:1.15;-webkit-text-size-adjust:100%;-moz-text-size-adjust:100%;-moz-tab-size:4;tab-size:4;-webkit-tap-highlight-color:transparent}
-body{margin:0;line-height:1.5;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;text-rendering:optimizeSpeed;min-height:100vh;min-height:100dvh;word-wrap:break-word;overflow-wrap:break-word}
-menu,ol,ul{list-style:none}
+:root{box-sizing:border-box}
+*,*::before,*::after{margin:0;padding:0;box-sizing:inherit}
+html{line-height:1.15;-webkit-text-size-adjust:100%;-moz-text-size-adjust:100%;-moz-tab-size:4;tab-size:4}
+body{line-height:1.15;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;text-rendering:optimizeSpeed;min-height:100vh;min-height:100dvh;word-wrap:break-word;overflow-wrap:break-word}
+ol,ul,menu{list-style:none}
 :where(h1,h2,h3,h4,h5,h6){margin:0;font-size:inherit;font-weight:inherit;line-height:1.2}
 :where(p,blockquote,dl,dd,figure,pre){margin:0}
 :where(a){background-color:transparent;color:inherit;text-decoration:inherit}
 :where(a,button){cursor:revert}
 abbr[title]{border-bottom:none;text-decoration:underline dotted;cursor:help}
 :where(b,strong){font-weight:bolder}
-:where(code,kbd,samp,pre){font-family:ui-monospace,SFMono-Regular,Consolas,'Liberation Mono',Menlo,monospace;font-size:1em}
+:where(code,kbd,samp,pre){font-family:ui-monospace,SFMono-Regular,Consolas,"Liberation Mono",Menlo,monospace;font-size:1em}
 small{font-size:80%}
 sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}
 sub{bottom:-0.25em}
@@ -40,18 +41,19 @@ table{border-collapse:collapse;border-spacing:0}
 :where([disabled]){cursor:not-allowed;opacity:0.6}
 :where([tabindex="-1"]:focus:not(:focus-visible)){outline:0!important}
 :where(#root,#__next){isolation:isolate}
-:where(a,area,button,input,label,select,summary,textarea,[tabindex]){-webkit-tap-highlight-color:transparent;touch-action:manipulation}
+:where(a,area,button,input,label,select,summary,textarea,[tabindex]){-webkit-tap-highlight-color:transparent}
 @media (prefers-reduced-motion:reduce){
-  html{scroll-behavior:auto}
-  html:focus-within{scroll-behavior:auto}
-  *,*::after,*::before{animation-duration:0.01ms!important;animation-iteration-count:1!important;transition-duration:0.01ms!important;scroll-behavior:auto!important}
+  html,html:focus-within{scroll-behavior:auto}
+  *,*::before,*::after{animation-duration:0.01ms!important;animation-iteration-count:1!important;transition-duration:0.01ms!important;scroll-behavior:auto!important}
 }
 @media print{
-  *,*::after,*::before{background:transparent!important;color:black!important;box-shadow:none!important;text-shadow:none!important}
+  *,*::before,*::after{background:transparent!important;color:black!important;box-shadow:none!important;text-shadow:none!important}
   a,a:visited{text-decoration:underline}
   abbr[title]::after{content:" (" attr(title) ")"}
-  blockquote,pre{border:1px solid #999;page-break-inside:avoid}
+  pre,blockquote{border:1px solid #999;page-break-inside:avoid}
   img{page-break-inside:avoid}
-  h2,h3,p{orphans:3;widows:3}
+  p,pre,blockquote,q,code,figcaption{line-height:2}
+  p{font-size:1rem}
+  p,h2,h3{orphans:3;widows:3}
   h2,h3{page-break-after:avoid}
 }
