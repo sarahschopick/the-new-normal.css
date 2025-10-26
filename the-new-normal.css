@@ -5,6 +5,10 @@
    <meta name="viewport" content="width=device-width, initial-scale=1"> */
 
 /* 1) Universal reset: margins/padding + box-sizing inherit */
+:root {
+   box-sizing: border-box;
+}
+
 *,
 *::before,
 *::after {
